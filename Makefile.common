@@ -66,15 +66,15 @@ Default_SQLITE_FLAGS  :=
 
 Linux-x86_CC        := $(CROSS_PREFIX)gcc
 Linux-x86_STRIP     := $(CROSS_PREFIX)strip
-Linux-x86_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -m32 -fvisibility=hidden
-Linux-x86_LINKFLAGS := -shared -static-libgcc
+Linux-x86_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -m32 -fvisibility=hidden -pthread
+Linux-x86_LINKFLAGS := -shared -static-libgcc -pthread
 Linux-x86_LIBNAME   := libsqlitejdbc.so
 Linux-x86_SQLITE_FLAGS  := 
 
 Linux-x86_64_CC        := $(CROSS_PREFIX)gcc
 Linux-x86_64_STRIP     := $(CROSS_PREFIX)strip
-Linux-x86_64_CCFLAGS   := -Ilib/inc_linux -I$(JAVA_HOME)/include -Os -fPIC -m64 -fvisibility=hidden
-Linux-x86_64_LINKFLAGS := -shared -static-libgcc
+Linux-x86_64_CCFLAGS   := -Ilib/inc_linux -I$(JAVA_HOME)/include -Os -fPIC -m64 -fvisibility=hidden -pthread
+Linux-x86_64_LINKFLAGS := -shared -static-libgcc -pthread
 Linux-x86_64_LIBNAME   := libsqlitejdbc.so
 Linux-x86_64_SQLITE_FLAGS  := 
 
@@ -122,22 +122,22 @@ DragonFly-x86_64_SQLITE_FLAGS  :=
 
 FreeBSD-x86_64_CC        := $(CROSS_PREFIX)cc
 FreeBSD-x86_64_STRIP     := $(CROSS_PREFIX)strip
-FreeBSD-x86_64_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden
-FreeBSD-x86_64_LINKFLAGS := -shared
+FreeBSD-x86_64_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden -pthread
+FreeBSD-x86_64_LINKFLAGS := -shared -pthread
 FreeBSD-x86_64_LIBNAME   := libsqlitejdbc.so
 FreeBSD-x86_64_SQLITE_FLAGS  :=
 
 OpenBSD-x86_64_CC        := $(CROSS_PREFIX)gcc
 OpenBSD-x86_64_STRIP     := $(CROSS_PREFIX)strip
-OpenBSD-x86_64_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden
-OpenBSD-x86_64_LINKFLAGS := -shared
+OpenBSD-x86_64_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden -pthread
+OpenBSD-x86_64_LINKFLAGS := -shared -pthread
 OpenBSD-x86_64_LIBNAME   := libsqlitejdbc.so
 OpenBSD-x86_64_SQLITE_FLAGS  := 
 
 SunOS-sparcv9_CC        := $(CROSS_PREFIX)gcc
 SunOS-sparcv9_STRIP     := $(CROSS_PREFIX)strip
-SunOS-sparcv9_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -O2s-fPIC -m64 -fvisibility=hidden
-SunOS-sparcv9_LINKFLAGS := -shared -static-libgcc
+SunOS-sparcv9_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -O2s-fPIC -m64 -fvisibility=hidden -pthread
+SunOS-sparcv9_LINKFLAGS := -shared -static-libgcc -pthread
 SunOS-sparcv9_LIBNAME   := libsqlitejdbc.so
 SunOS-sparcv9_SQLITE_FLAGS  := 
 
