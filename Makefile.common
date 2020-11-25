@@ -66,15 +66,15 @@ Default_SQLITE_FLAGS  :=
 
 Linux-x86_CC        := $(CROSS_PREFIX)gcc
 Linux-x86_STRIP     := $(CROSS_PREFIX)strip
-Linux-x86_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -m32 -fvisibility=hidden -pthread
-Linux-x86_LINKFLAGS := -shared -static-libgcc -pthread
+Linux-x86_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -m32 -fvisibility=hidden -lpthread
+Linux-x86_LINKFLAGS := -shared -static-libgcc -lpthread
 Linux-x86_LIBNAME   := libsqlitejdbc.so
 Linux-x86_SQLITE_FLAGS  := 
 
 Linux-x86_64_CC        := $(CROSS_PREFIX)gcc
 Linux-x86_64_STRIP     := $(CROSS_PREFIX)strip
-Linux-x86_64_CCFLAGS   := -Ilib/inc_linux -I$(JAVA_HOME)/include -Os -fPIC -m64 -fvisibility=hidden -pthread
-Linux-x86_64_LINKFLAGS := -shared -static-libgcc -pthread
+Linux-x86_64_CCFLAGS   := -Ilib/inc_linux -I$(JAVA_HOME)/include -Os -fPIC -m64 -fvisibility=hidden -lpthread
+Linux-x86_64_LINKFLAGS := -shared -static-libgcc -lpthread
 Linux-x86_64_LIBNAME   := libsqlitejdbc.so
 Linux-x86_64_SQLITE_FLAGS  := 
 
